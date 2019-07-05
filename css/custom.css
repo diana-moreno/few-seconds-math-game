@@ -1,0 +1,74 @@
+body {
+  background-image: url("../images/background-numbers.png");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  padding: 5vh 0px;
+}
+
+body::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 70%;
+  height: 80vh;
+  margin: 10vh 15%;
+  text-align: center;
+  opacity: 0.7;
+}
+
+#game-container {
+  width: 70%;
+  height: 80vh;
+  position: relative;
+  z-index: 2;
+  margin: 10vh 15%;
+  text-align: center;
+}
+
+.centered-box {
+  background-color: #fff;
+  padding: 20px;
+  width: 50%;
+  margin: auto;
+}
+
+.math-op-icon {
+  width: 20px;
+}
+
+#game-over-img {
+  width: 300px;
+}
+
+.operator-box {
+  border: 3px solid #000;
+  border-radius: 8px;
+  display: inline-block;
+  padding: 5px 8px;
+  margin-bottom: 8px;
+}
+
+#clock {
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.btn {
+  background-color: #3274A7;
+  color: #fff;
+  border: 0;
+  box-shadow: 0px;
+  border-radius: 4px;
+  padding: 8px 15px;
+}
+
+#game-board,
+#game-over-img,
+#audio-good,
+#audio-wrong {
+  display: none;
+}

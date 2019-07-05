@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--  Added Libraries -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!--<script src="./audios/ion.sound.min.js"></script>-->
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+
+    <!-- Custon CSS -->
+    <link  href="css/custom.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="game-container">
+      <h1>Ten Seconds Math Game</h1>
+
+      <section id="game-board" class="centered-box">
+        <div class="separator"> <span id="clock">10</span> seconds left</div>
+        <div><img id="game-over-img" src="images/gameover.jpg" alt=""></div>
+        <div class="separator align-box"> <span class="highlight-span" id="question"></span></div>
+        <div class="separator align-box"> <input id="answer" placeholder="answer" ></div>
+        <audio id="audio-good" controls>
+        <source type="audio/wav" src="./sounds/sounds/coin.mp3">
+        </audio>
+        <audio id="audio-wrong" controls>
+        <source type="audio/wav" src="./sounds/sounds/dead.wav">
+        </audio>
+        <div class="separator"><button id="restart" class="btn">Restart</button></div>
+      </section>
+
+      <section id="game-options" class="centered-box">
+        <h2>Game Options</h2>
+        <div class="centered-box-separator">
+          <label for="number-limit-range">Number Limit: <span class="highlight-span" id="number-limit">10</span></label>
+          <input id="number-limit-range" type="range" min="10" max="100" value="10" step="10" />
+        </div>
+
+        <div class="centered-box-separator">
+          <h3>Operators</h3>
+          <div id="operators-container">
+            <div class="operator-box">
+              <input type="checkbox" class="option-box" id="addition" checked="true">
+              <img class="math-op-icon" src="images/add.jpg" alt="">
+            </div>
+            <div class="operator-box">
+              <input type="checkbox" class="option-box" id="substraction">
+              <img class="math-op-icon" src="images/substract.jpg" alt="">
+            </div><br>
+            <div class="operator-box">
+              <input type="checkbox" class="option-box" id="multiplication">
+              <img class="math-op-icon" src="images/multiply.jpg" alt="">
+            </div>
+            <div class="operator-box">
+              <input type="checkbox" class="option-box" id="division">
+              <img class="math-op-icon" src="images/divide.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="centered-box separator">
+          <button id="start" class="btn">Start Game</button>
+        </div>
+      </section>
+
+      <!--<img src="https://en.bitcoin.it/w/images/en/5/50/Bitcoin.png" class="img-responsive" id="btc-reward">-->
+    </div>
+
+    <!-- Custon JavaScript -->
+    <script type="text/javascript" src="js/main.js"></script>
+    <!--<script type="module" src="js/applicationFinished.js"></script>-->
+  </body>
+</html>
