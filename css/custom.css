@@ -34,6 +34,7 @@ body::after {
   padding: 20px;
   width: 50%;
   margin: auto;
+
 }
 
 .math-op-icon {
@@ -65,10 +66,14 @@ body::after {
   border-radius: 4px;
   padding: 8px 15px;
 }
-
+#puntuation {
+  display: flex;
+  justify-content: center;
+}
 #game-board,
-#game-over-img,
+#results,
 #audio-good,
-#audio-wrong {
+#audio-wrong,
+#play-again {
   display: none;
 }

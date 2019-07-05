@@ -17,10 +17,8 @@
   <body>
     <div id="game-container">
       <h1>Ten Seconds Math Game</h1>
-
       <section id="game-board" class="centered-box">
         <div class="separator"> <span id="clock">10</span> seconds left</div>
-        <div><img id="game-over-img" src="images/gameover.jpg" alt=""></div>
         <div class="separator align-box"> <span class="highlight-span" id="question"></span></div>
         <div class="separator align-box"> <input id="answer" placeholder="answer" ></div>
         <audio id="audio-good" controls>
@@ -29,9 +27,7 @@
         <audio id="audio-wrong" controls>
         <source type="audio/wav" src="./sounds/sounds/dead.wav">
         </audio>
-        <div class="separator"><button id="restart" class="btn">Restart</button></div>
       </section>
-
       <section id="game-options" class="centered-box">
         <h2>Game Options</h2>
         <div class="centered-box-separator">
@@ -64,7 +60,13 @@
           <button id="start" class="btn">Start Game</button>
         </div>
       </section>
-
+      <section id="results" class="centered-box">
+        <div><img id="game-over-img" src="images/gameover.jpg" alt=""></div>
+        <div id="puntuation" class="separator">
+          <h3>You scored&nbsp</h3><h3 id="score"></h3><h3 id="score">&nbsppoints!</h3>
+        </div>
+        <div class="separator"><button id="play-again" class="btn">Play again</button></div>
+      </section>
       <!--<img src="https://en.bitcoin.it/w/images/en/5/50/Bitcoin.png" class="img-responsive" id="btc-reward">-->
     </div>
 

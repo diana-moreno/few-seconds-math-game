@@ -2,7 +2,7 @@
 const startButton = document.getElementById('start');
 const gameOptions = document.getElementById('game-options');
 const gameBoard = document.getElementById('game-board');
-const restart = document.getElementById('restart');
+const playAgain = document.getElementById('play-again');
 const addition = document.getElementById('addition');
 const multiplication = document.getElementById('multiplication');
 const division = document.getElementById('division');
@@ -12,15 +12,18 @@ const upperLimit = document.getElementById('number-limit-range');
 const gameOver = document.getElementById('game-over-img');
 const question = document.getElementById('question');
 const answer = document.getElementById('answer');
-var audioGood = document.getElementById("audio-good");
-var audioWrong = document.getElementById("audio-wrong");
-var clock = document.getElementById("clock");
+const audioGood = document.getElementById("audio-good");
+const audioWrong = document.getElementById("audio-wrong");
+const clock = document.getElementById("clock");
+const score = document.getElementById("score");
+const numberLimit = document.getElementById("number-limit");
 
 //declaradas variables globales
 let num1 = 0;
 let num2 = 0;
 let operator = "";
 let counter = 10;
+let scoreAchieved = 0;
 
 //función que recibe un número máximo y genera un número aleatorio
 function generateRandomNumber(upperLimit) {
@@ -54,7 +57,7 @@ function setNewQuestion(upperLimit) {
 }
 
 
-//función que genera un timer que va de 10 a 0. Se descuenta 1 a cada segundo.
+//función que genera un timer que va de 10 a 0. Se descuenta 1 a cada segundo. Al terminar, esconde la pantalla actual y muestra la pantalla de resultados. Resetea el contador a 10 de nuevo por si se quiere volver a jugar.
 function timer() {
   console.log(counter)
   var callbackFunction = function () {
@@ -63,6 +66,11 @@ function timer() {
     counter -= 1;
     if (counter < 0) {
     clearTimeout(timeoutId);
+    gameBoard.style.display = "none"
+    playAgain.style.display = "inline-block"
+    results.style.display = "block"
+    counter = 10;
+    score.innerHTML = scoreAchieved;
     }
   }
   var timeoutId = setTimeout(callbackFunction, 1000)
@@ -87,16 +95,36 @@ function checkResult() {
     audioGood.play();
     answer.value = "";
     counter += 10;
+    setScore()
     setNewQuestion(upperLimit.value)
+    console.log(upperLimit)
   } else {
     answer.style.color = "red";
     audioWrong.play();
   }
 }
 
+//función que establece un sistema de puntos dependiendo de las operaciones resueltas. La división tiene más valor, después la multiplicación, resta y suma por este orden.
+function setScore() {
+  operator = getOperator(userSelectOperators)
+  if(operator === "/") {
+    scoreAchieved += 4;
+    console.log(scoreAchieved)
+  } else if(operator === "*") {
+    scoreAchieved += 3;
+  } else if(operator === "-") {
+    scoreAchieved += 2;
+  } else if(operator === "+") {
+    scoreAchieved += 1;
+    console.log(scoreAchieved)
+  }
+}
 
 //función que permite comenzar el juego y reiniciarlo accediendo al DOM.
 function startGame() {
+    upperLimit.onchange = function() {
+    numberLimit.innerHTML = upperLimit.value
+  }
   startButton.onclick = function() {
     gameOptions.style.display = "none";
     gameBoard.style.display = "block";
@@ -107,11 +135,11 @@ function startGame() {
       checkResult();
     }
   }
-  restart.onclick = function() {
+  playAgain.onclick = function() {
     gameOptions.style.display = "block";
     gameBoard.style.display = "none";
+    results.style.display = "none";
   }
 }
 
 startGame();
-
