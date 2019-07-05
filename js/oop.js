@@ -16,18 +16,21 @@ var audioGood = document.getElementById("audio-good");
 var audioWrong = document.getElementById("audio-wrong");
 var clock = document.getElementById("clock");
 
+
+
+
 class MathExpression {
-  constructor(upperLimit) {
+  constructor(optionBox, upperLimit) {
     this.num1 = this.generateRandomNumber(upperLimit.value);
     this.num2 = this.generateRandomNumber(upperLimit.value);
-    this.operator = this.getOperator()
+    this.operator = this.getOperator(optionBox)
     this.setNewQuestion();
   }
   generateRandomNumber(upperLimit) {
     let randomNum = Math.floor(Math.random() * (upperLimit) + 1);
     return randomNum;
   }
-  getOperator() {
+  getOperator(optionBox) {
     let filteredOptions = [...optionBox].filter(elem => elem.checked)
     let index = Math.floor(Math.random() * filteredOptions.length)
     let nameOperator = filteredOptions[index].id
@@ -46,16 +49,23 @@ class MathExpression {
   }
 }
 
+
+
+let counter = 10;
+
+
 class Play {
-  constructor() {
-    this.mathExpr = new MathExpression(upperLimit, optionBox)
-    //this.getResult()
-    //this.checkResult()
+  constructor(mathExpr) {
   }
-  getResult() {
-    let num1 = this.mathExpr.num1
-    let num2 = this.mathExpr.num2
-    let operator = this.mathExpr.operator
+  //getMathExpression() {
+  //  this.mathExpr = new MathExpression(optionBox, upperLimit)
+  //}
+
+  getResult(mathExpr) {
+    console.log(mathExpr)
+    let num1 = mathExpr.num1
+    let num2 = mathExpr.num2
+    let operator = mathExpr.operator
     if(operator === "+") {
       return num1 + num2;
     } else if(operator === "-") {
@@ -66,9 +76,7 @@ class Play {
       return num1 / num2;
     }
   }
-  timer(seconds) {
-    let counter = seconds;
-    console.log(counter)
+  timer() {
     var callbackFunction = function () {
       clock.innerHTML = counter;
       timeoutId = setTimeout(callbackFunction, 1000);
@@ -80,21 +88,26 @@ class Play {
     }
     var timeoutId = setTimeout(callbackFunction, 1000)
   }
-  checkResult() {
-    if(answer.value == this.getResult()) {
+  checkResult(mathExpr) {
+    if(answer.value == this.getResult(mathExpr)) {
       audioGood.play();
+          console.log(answer.value, this.getResult(mathExpr))
       answer.value = "";
-      this.timer(10);
-      this.nextMathExpr()
+          console.log(answer.value, this.getResult(mathExpr))
+      counter += 10;
+      this.newMathExpression();
     } else {
       answer.style.color = "red";
+          console.log(answer.value, this.getResult(mathExpr))
       audioWrong.play();
     }
   }
-  nextMathExpr() {
-    let newMathExpr = new MathExpression(upperLimit, optionBox)
-    newMathExpr.setNewQuestion()
+  newMathExpression() {
+    let newExpr = new MathExpression(optionBox, upperLimit)
+    newExpr.this.getResult(newExpr)
+    newExpr.this.checkResult(newExpr)
   }
+
 }
 
 
@@ -103,12 +116,13 @@ function startGame() {
   startButton.onclick = function() {
     gameOptions.style.display = "none";
     gameBoard.style.display = "block";
-    let newGAme = new Play()
-    newGAme.getResult()
-    newGAme.timer(10)
+    let mathExpr = new MathExpression(optionBox, upperLimit)
+    let newGAme = new Play(mathExpr)
+    newGAme.timer()
     answer.onchange = function() {
-      newGAme.checkResult()
-      newGAme.nextMathExpr()
+    newGAme.getResult(mathExpr)
+    newGAme.checkResult(mathExpr)
+
     }
   }
   restart.onclick = function() {
