@@ -5,73 +5,70 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--  Added Libraries -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <!--<script src="./audios/ion.sound.min.js"></script>-->
+    <!--reset layout with normalize.min.css-->
     <link  href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet">
-
-    <!-- Custon CSS -->
-    <link  href="css/custom.css" rel="stylesheet">
+    <!-- main CSS -->
+    <link href="css/custom.css" rel="stylesheet">
   </head>
   <body>
     <div id="game-container">
       <h1>Ten Seconds Math Game</h1>
       <section id="game-board" class="centered-box">
-        <div class="separator"> <span id="clock">10</span> seconds left</div>
-        <div class="separator align-box"> <span class="highlight-span" id="question"></span></div>
-        <div class="separator align-box"> <input id="answer" placeholder="answer" ></div>
-        <audio id="audio-good" controls>
-        <source type="audio/wav" src="./sounds/sounds/coin.mp3">
-        </audio>
-        <audio id="audio-wrong" controls>
-        <source type="audio/wav" src="./sounds/sounds/dead.wav">
-        </audio>
+        <div>
+          <span id="clock">10</span> seconds left
+        </div>
+        <div>
+          <span class="highlight-span" id="question"></span>
+        </div>
+        <div>
+          <input id="answer" placeholder="answer" >
+        </div>
       </section>
       <section id="game-options" class="centered-box">
+
         <h2>Game Options</h2>
-        <div class="centered-box-separator">
-          <label for="number-limit-range">Number Limit: <span class="highlight-span" id="number-limit">10</span></label>
+        <div>
+          <label for="number-limit-range">Number Limit: <span id="number-limit">10</span></label>
           <input id="number-limit-range" type="range" min="10" max="100" value="10" step="10" />
         </div>
-
-        <div class="centered-box-separator">
+        <div>
           <h3>Operators</h3>
           <div id="operators-container">
             <div class="operator-box">
-              <input type="checkbox" class="option-box" id="addition" checked="true">
+              <input type="checkbox" id="addition" class="option-box" checked="true">
               <img class="math-op-icon" src="images/add.jpg" alt="">
             </div>
             <div class="operator-box">
-              <input type="checkbox" class="option-box" id="substraction">
+              <input type="checkbox" id="substraction" class="option-box">
               <img class="math-op-icon" src="images/substract.jpg" alt="">
             </div><br>
             <div class="operator-box">
-              <input type="checkbox" class="option-box" id="multiplication">
+              <input type="checkbox" id="multiplication" class="option-box">
               <img class="math-op-icon" src="images/multiply.jpg" alt="">
             </div>
             <div class="operator-box">
-              <input type="checkbox" class="option-box" id="division">
+              <input type="checkbox" id="division" class="option-box">
               <img class="math-op-icon" src="images/divide.jpg" alt="">
             </div>
           </div>
         </div>
-        <div class="centered-box separator">
+        <p>The most difficult operations, the most score you will achieve!</p>
+        <div>
           <button id="start" class="btn">Start Game</button>
         </div>
       </section>
       <section id="results" class="centered-box">
         <div><img id="game-over-img" src="images/gameover.jpg" alt=""></div>
-        <div id="puntuation" class="separator">
+        <div id="puntuation">
           <h3>You scored&nbsp</h3><h3 id="score"></h3><h3 id="score">&nbsppoints!</h3>
         </div>
-        <div class="separator"><button id="play-again" class="btn">Play again</button></div>
+        <div>
+          <button id="play-again" class="btn">Play again</button>
+        </div>
       </section>
-      <!--<img src="https://en.bitcoin.it/w/images/en/5/50/Bitcoin.png" class="img-responsive" id="btc-reward">-->
     </div>
-
-    <!-- Custon JavaScript -->
+    <script src="./sounds/sounds.js" type="text/javascript"></script>
+    <!-- main JavaScript -->
     <script type="text/javascript" src="js/main.js"></script>
-    <!--<script type="module" src="js/applicationFinished.js"></script>-->
   </body>
 </html>

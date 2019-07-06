@@ -53,13 +53,13 @@ function setNewQuestion(upperLimit) {
   num1 = generateRandomNumber(upperLimit);
   num2 = generateRandomNumber(upperLimit);
   operator = getOperator(userSelectOperators);
-  question.innerHTML = num1 + operator + num2
+  question.innerHTML = num1 + " " + operator + " " + num2 + " = ?"
 }
 
 
 //función que genera un timer que va de 10 a 0. Se descuenta 1 a cada segundo. Al terminar, esconde la pantalla actual y muestra la pantalla de resultados. Resetea el contador a 10 de nuevo por si se quiere volver a jugar.
 function timer() {
-  console.log(counter)
+  console.log(counter) // @todo: remove this
   var callbackFunction = function () {
     clock.innerHTML = counter;
     timeoutId = setTimeout(callbackFunction, 1000);
@@ -68,7 +68,7 @@ function timer() {
     clearTimeout(timeoutId);
     gameBoard.style.display = "none"
     playAgain.style.display = "inline-block"
-    results.style.display = "block"
+    results.style.display = "flex"
     counter = 10;
     score.innerHTML = scoreAchieved;
     }
@@ -92,15 +92,14 @@ function getResult() {
 //función que comprueba si el usuario ha resuelto correctamente la operación. Si es así, se suman 10 segundos al contador, aparece una nueva operación matemática para resolver y la solución anterior desaparece, y se oye un sonido de acierto. Si la solución no es correcta, el número se vuelve rojo y se oye un sonido de fallo, la operación matemática no cambiará hasta que no se resuelva correctamente.
 function checkResult() {
   if(answer.value == getResult()) {
-    audioGood.play();
+    playSound("coin");
     answer.value = "";
     counter += 10;
     setScore()
     setNewQuestion(upperLimit.value)
-    console.log(upperLimit)
   } else {
     answer.style.color = "red";
-    audioWrong.play();
+    playSound("dead");
   }
 }
 
@@ -127,16 +126,17 @@ function startGame() {
   }
   startButton.onclick = function() {
     gameOptions.style.display = "none";
-    gameBoard.style.display = "block";
+    gameBoard.style.display = "flex";
     setNewQuestion(upperLimit.value)
     timer()
+    answer.focus();
     answer.onchange = function() {
       getResult();
       checkResult();
     }
   }
   playAgain.onclick = function() {
-    gameOptions.style.display = "block";
+    gameOptions.style.display = "flex";
     gameBoard.style.display = "none";
     results.style.display = "none";
   }

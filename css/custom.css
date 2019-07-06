@@ -4,8 +4,9 @@ body {
   background-size: cover;
   width: 100%;
   height: 100%;
-  padding: 5vh 0px;
+  ssspadding: 5vh 0px;
 }
+
 
 body::after {
   position: absolute;
@@ -27,6 +28,9 @@ body::after {
   z-index: 2;
   margin: 10vh 15%;
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .centered-box {
@@ -34,6 +38,13 @@ body::after {
   padding: 20px;
   width: 50%;
   margin: auto;
+
+  margin-top: 3rem;
+  height: 50%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
 }
 
@@ -76,4 +87,7 @@ body::after {
 #audio-wrong,
 #play-again {
   display: none;
+}
+#question {
+  font-size: 3rem;
 }

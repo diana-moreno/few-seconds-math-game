@@ -1,21 +1,21 @@
 var sounds = {
   "dead" : {
-    url : "sounds/dead.wav"
+    url : "./sounds/sounds/dead.wav"
   },
   "smash" : {
-    url : "sounds/smash.mp3",
+    url : "./sounds/sounds/smash.mp3",
   },
   "ping" : {
-    url : "sounds/ping.mp3"
+    url : "./sounds/sounds/ping.mp3"
   },
   "bump" : {
-    url : "sounds/bump.mp3"
+    url : "./sounds/sounds/bump.mp3"
   },
   "jump" : {
-    url : "sounds/jump.wav"
+    url : "./sounds/sounds/jump.wav"
   },
   "coin" : {
-    url : "sounds/coin.mp3"
+    url : "./sounds/sounds/coin.mp3"
   }
 };
 
