@@ -1,6 +1,6 @@
-**TEN SECONDS MATH**
+#**TEN SECONDS MATH**
 
-Ten Seconds Math is a game created by Michael Jakob to challenge a person's mathematical skills against the clock.
+Ten Seconds Math is a game created by Michael Jakob to challenge a person's mathematical skills against the clock.  
 In this project, I made my own version of this game changing some of it's features.
 
 **Features**
@@ -28,6 +28,7 @@ To run the game in local, I have included Serve, a local server from an NPM libr
 Requeriments:
 
 - node.js
+
 - npm
 
 Steps to open the server:
@@ -46,7 +47,7 @@ Steps to open the server:
    │   - Local:            http://localhost:5000       │
    │   - On Your Network:  http://192.168.1.174:5000   │
    │                                                   │
-   │   Copied local address to clipboard! 
+   │   Copied local address to clipboard! 	       │
 ```
 
 **What I learned**
@@ -55,13 +56,15 @@ Steps to open the server:
 
 - Add sounds from a library adding scripts.
 
-- Change style with CSS before and after.
+- Implement async and callback functions.
 
 - How to switch to the next screen game with JS and CSS.
 
-- Create gitignore for some unnecessary local folders.
+- Change style with CSS before and after.
 
-- How to create and edit a json file.
+- Create gitignore to hide some unnecessary local folders.
+
+- How to vincule and edit a json file.
 
 **Resources**
 
