@@ -3,7 +3,7 @@
 Ten Seconds Math is a game created by Michael Jakob to challenge a person's mathematical skills against the clock.  
 In this project, I made my own version of this game changing some of it's features.
 
-**Features**
+#### **Features**
 
 - At the beginning, the user has 10 seconds to answer the math problem.
 
@@ -21,7 +21,7 @@ In this project, I made my own version of this game changing some of it's featur
 
 - The user loses the game when the time is up! Don't let the clock run out!
 
-**Usage**
+#### **Usage**
 
 To run the game in local, I have included Serve, a local server from an NPM library. 
 
@@ -35,8 +35,9 @@ Steps to open the server:
 
 - Clone or download the repository in your computer.
 
-- Type the following command in your terminal:
+- Type the following commands in your terminal:
 
+`  ~ npm install`
 `  ~ npm start`
 
 - Open the project trought the links are provided by the server.
@@ -50,7 +51,7 @@ Steps to open the server:
    │   Copied local address to clipboard! 	       │
 ```
 
-**What I learned**
+#### **What I learned**
 
 - Run the project into a local server.
 
@@ -66,7 +67,7 @@ Steps to open the server:
 
 - How to vincule and edit a json file.
 
-**Resources**
+#### **Resources**
 
 - For the sounds I used the library [flukeout.simple-sounds](https://github.com/flukeout/simple-sounds).
 
