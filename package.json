@@ -1,0 +1,29 @@
+{
+  "name": "10-seconds-math-game",
+  "version": "0.0.0",
+  "description": "Simple 10 seconds Math game I built for fun",
+  "main": "main.js",
+  "scripts": {
+    "start": "serve .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diana-moreno/10-seconds-math-game.git"
+  },
+  "keywords": [
+    "math",
+    "logic",
+    "javascript",
+    "js"
+  ],
+  "author": "Diana Moreno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diana-moreno/10-seconds-math-game/issues"
+  },
+  "homepage": "https://github.com/diana-moreno/10-seconds-math-game#readme",
+  "devDependencies": {
+    "serve": "^11.0.2"
+  }
+}
