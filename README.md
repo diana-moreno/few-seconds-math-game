@@ -1,4 +1,4 @@
-#**TEN SECONDS MATH**
+## TEN SECONDS MATH
 
 Ten Seconds Math is a game created by Michael Jakob to challenge a person's mathematical skills against the clock.  
 In this project, I made my own version of this game changing some of it's features.
