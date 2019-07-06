@@ -37,7 +37,7 @@ Steps to open the server:
 
 - Type the following commands in your terminal:
 
-`  ~ npm install`
+`  ~ npm install`  
 `  ~ npm start`
 
 - Open the project trought the links are provided by the server.
