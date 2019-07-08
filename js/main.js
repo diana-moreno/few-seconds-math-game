@@ -28,7 +28,6 @@ let scoreAchieved = 0;
 //función que recibe un número máximo y genera un número aleatorio
 function generateRandomNumber(upperLimit) {
   let randomNum = Math.floor(Math.random() * (upperLimit) + 1);
-  console.log(upperLimit)
   return randomNum;
 }
 
@@ -48,18 +47,21 @@ function getOperator(userSelectOperators) {
   }
 }
 
-//función que accede al DOM y muestra por pantalla la expresión matemática generada
+//función que accede al DOM y muestra por pantalla la expresión matemática generada. En el caso de la división, solo se generarán divisiones cuyo resultado sea un número entero.
 function setNewQuestion(upperLimit) {
   num1 = generateRandomNumber(upperLimit);
   num2 = generateRandomNumber(upperLimit);
   operator = getOperator(userSelectOperators);
+  while(operator === '/' & getResult().toString().includes('.')) {
+    num1 = generateRandomNumber(upperLimit);
+    num2 = generateRandomNumber(upperLimit);
+  }
   question.innerHTML = num1 + " " + operator + " " + num2 + " = ?"
 }
 
 
 //función que genera un timer que va de 10 a 0. Se descuenta 1 a cada segundo. Al terminar, esconde la pantalla actual y muestra la pantalla de resultados. Resetea el contador a 10 de nuevo por si se quiere volver a jugar.
 function timer() {
-  console.log(counter) // @todo: remove this
   var callbackFunction = function () {
     clock.innerHTML = counter;
     timeoutId = setTimeout(callbackFunction, 1000);
@@ -89,12 +91,23 @@ function getResult() {
   }
 }
 
-//función que comprueba si el usuario ha resuelto correctamente la operación. Si es así, se suman 10 segundos al contador, aparece una nueva operación matemática para resolver y la solución anterior desaparece, y se oye un sonido de acierto. Si la solución no es correcta, el número se vuelve rojo y se oye un sonido de fallo, la operación matemática no cambiará hasta que no se resuelva correctamente.
-function checkResult() {
+// función que suma segundos al contador (5 para la versión fácil, 7 para la versión media, y 10 para la versión difícil) dependiendo del límite seleccionado.
+function addSeconds(upperLimit) {
+  if(upperLimit.value == 10) { //versión fácil
+    counter += 5;
+  } else if(upperLimit.value == 20) { //versión media
+    counter += 7;
+  } else { // versión dificil
+    counter += 10;
+  }
+}
+
+//función que comprueba si el usuario ha resuelto correctamente la operación. Si es así, se suman segundos al contador, aparece una nueva operación matemática para resolver y la solución anterior desaparece, y se oye un sonido de acierto. Si la solución no es correcta, el número se vuelve rojo y se oye un sonido de fallo, la operación matemática no cambiará hasta que no se resuelva correctamente.
+function checkResult(upperLimit) {
   if(answer.value == getResult()) {
     playSound("coin");
     answer.value = "";
-    counter += 10;
+    addSeconds(upperLimit)
     setScore()
     setNewQuestion(upperLimit.value)
   } else {
@@ -108,14 +121,12 @@ function setScore() {
   operator = getOperator(userSelectOperators)
   if(operator === "/") {
     scoreAchieved += 4;
-    console.log(scoreAchieved)
   } else if(operator === "*") {
     scoreAchieved += 3;
   } else if(operator === "-") {
     scoreAchieved += 2;
   } else if(operator === "+") {
     scoreAchieved += 1;
-    console.log(scoreAchieved)
   }
 }
 
@@ -132,7 +143,7 @@ function startGame() {
     answer.focus();
     answer.onchange = function() {
       getResult();
-      checkResult();
+      checkResult(upperLimit);
     }
   }
   playAgain.onclick = function() {
