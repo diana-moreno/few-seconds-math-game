@@ -115,7 +115,6 @@ function checkResult(upperLimit) {
     addSeconds(upperLimit)
     setScore()
     setNewQuestion(upperLimit.value)
-    answer.focus();
   } else {
     answer.style.color = "red";
     playSound("dead", { volume: 1 });
