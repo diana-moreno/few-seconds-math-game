@@ -85,9 +85,13 @@ body::after {
 #results,
 #audio-good,
 #audio-wrong,
-#play-again {
+#play-again,
+#game-options {
   display: none;
 }
 #question {
   font-size: 3rem;
+}
+#clock-audio {
+  display: none;
 }

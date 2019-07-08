@@ -12,8 +12,25 @@
   </head>
   <body>
     <div id="game-container">
-      <h1>Seconds Math Game</h1>
+      <h1>Few Seconds Math Game</h1>
+      <section id="game-presentation" class="centered-box">
+        <div>
+          <h2>Wellcome to Few Seconds Math</h2>
+          <p>This game will challenge your mathematical skills against the clock.</p>
+          <p>You can set the difficulty by selecting the different operators and the maximum number you want to play with.</p>
+          <p>The most difficult operations, the most score you will achieve!</p>
+          <p>For each correct answer, a few seconds will be added to the clock, depending on the level you choosed.</p>
+          <p>The game ends when the time is over.</p>
+          <p>Good luck!</p>
+        </div>
+        <div>
+          <button id="play" class="btn">Play Game</button>
+        </div>
+      </section>
       <section id="game-board" class="centered-box">
+        <audio loop id="clock-audio">
+          <source type="audio/wav" src="./sounds/clock.wav">
+        </audio>
         <div>
           <span id="clock">10</span> seconds left
         </div>
@@ -25,7 +42,6 @@
         </div>
       </section>
       <section id="game-options" class="centered-box">
-
         <h2>Game Options</h2>
         <div>
           <label for="number-limit-range">Number Limit: <span id="number-limit">10</span></label>
@@ -51,14 +67,11 @@
               <img class="math-op-icon" src="images/divide.jpg" alt="">
             </div>
           </div>
-        </div>
-        <p>The most difficult operations, the most score you will achieve!</p>
-        <div>
           <button id="start" class="btn">Start Game</button>
         </div>
       </section>
       <section id="results" class="centered-box">
-        <div><img id="game-over-img" src="images/gameover.jpg" alt=""></div>
+        <div><img id="game-over-img" src="images/game-over.png" alt=""></div>
         <div id="puntuation">
           <h3>You scored&nbsp</h3><h3 id="score"></h3><h3 id="score">&nbsppoints!</h3>
         </div>

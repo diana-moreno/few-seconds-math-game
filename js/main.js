@@ -17,6 +17,9 @@ const audioWrong = document.getElementById("audio-wrong");
 const clock = document.getElementById("clock");
 const score = document.getElementById("score");
 const numberLimit = document.getElementById("number-limit");
+const gamePresentation = document.getElementById("game-presentation");
+const play = document.getElementById("play");
+const clockAudio = document.getElementById("clock-audio");
 
 //declaradas variables globales
 let num1 = 0;
@@ -132,12 +135,17 @@ function setScore() {
 
 //función que permite comenzar el juego y reiniciarlo accediendo al DOM.
 function startGame() {
-    upperLimit.onchange = function() {
+  play.onclick = function() {
+    gamePresentation.style.display = "none";
+    gameOptions.style.display = "flex";
+  }
+  upperLimit.onchange = function() {
     numberLimit.innerHTML = upperLimit.value
   }
   startButton.onclick = function() {
     gameOptions.style.display = "none";
     gameBoard.style.display = "flex";
+    clockAudio.play();
     setNewQuestion(upperLimit.value)
     timer()
     answer.focus();
