@@ -1,17 +1,17 @@
-## TEN SECONDS MATH
+## FEW SECONDS MATH GAME
 
 Ten Seconds Math is a game created by Michael Jakob to challenge a person's mathematical skills against the clock.  
 In this project, I made my own version of this game changing some of it's features.
 
 #### **Features**
 
-- At the beginning, the user has 10 seconds to answer the math problem.
+- At the beginning, the user has 10 seconds to answer the first math problem.
 - The user chooses what type/s of math operations they will face: addition, substraction, multiplication or division.
 - The user can limite the maximum number will appear.
 - The most dificult operations provides more points (4 point for each division, 3 for multiplication, 2 for substraction and 1 for addition).
 - The clock will start running once the first question is showed.
 - The current question must be correctly answered to be allowed to answer the next.
-- Every correct answer will add 10 seconds more to the clock.
+- Every correct answer will add a few seconds more to the clock, depending on the difficulty selected.
 - The user loses the game when the time is up! Don't let the clock run out!
 
 #### **Usage**
