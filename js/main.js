@@ -3,6 +3,7 @@ const startButton = document.getElementById('start');
 const gameOptions = document.getElementById('game-options');
 const gameBoard = document.getElementById('game-board');
 const playAgain = document.getElementById('play-again');
+const results = document.getElementById('results');
 const addition = document.getElementById('addition');
 const multiplication = document.getElementById('multiplication');
 const division = document.getElementById('division');
@@ -71,6 +72,7 @@ function timer() {
     counter -= 1;
     if (counter < 0) {
     clearTimeout(timeoutId);
+    clockAudio.pause();
     gameBoard.style.display = "none"
     playAgain.style.display = "inline-block"
     results.style.display = "flex"
@@ -78,7 +80,7 @@ function timer() {
     score.innerHTML = scoreAchieved;
     }
   }
-  var timeoutId = setTimeout(callbackFunction, 1000)
+  var timeoutId = setTimeout(callbackFunction)
 }
 
 //función que realiza la operación matemática devolviendo el resultado
@@ -108,14 +110,15 @@ function addSeconds(upperLimit) {
 //función que comprueba si el usuario ha resuelto correctamente la operación. Si es así, se suman segundos al contador, aparece una nueva operación matemática para resolver y la solución anterior desaparece, y se oye un sonido de acierto. Si la solución no es correcta, el número se vuelve rojo y se oye un sonido de fallo, la operación matemática no cambiará hasta que no se resuelva correctamente.
 function checkResult(upperLimit) {
   if(answer.value == getResult()) {
-    playSound("coin");
+    playSound("coin", { volume: 3 });
     answer.value = "";
     addSeconds(upperLimit)
     setScore()
     setNewQuestion(upperLimit.value)
+    answer.focus();
   } else {
     answer.style.color = "red";
-    playSound("dead");
+    playSound("dead", { volume: 1 });
   }
 }
 
@@ -145,6 +148,7 @@ function startGame() {
   startButton.onclick = function() {
     gameOptions.style.display = "none";
     gameBoard.style.display = "flex";
+    clockAudio.volume = 0.2;
     clockAudio.play();
     setNewQuestion(upperLimit.value)
     timer()
