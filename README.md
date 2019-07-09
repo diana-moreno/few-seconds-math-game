@@ -18,14 +18,20 @@ In this project, I made my own version of this game changing some of it's featur
 
 To run the game in local, I have included Serve, a local server from an NPM library. 
 
-Requeriments:
+- Install Node.js at the terminal if you haven't yet. (global commands for Ubuntu)
 
-- node.js
-- npm
+```
+   ~ sudo apt-get update
+   ~ sudo apt-get install nodejs
+```
+- You will need to install the package manager npm:
 
-Steps to open the server:
+`  ~ sudo apt-get install npm`
 
 - Clone or download the repository in your computer.
+
+`  ~ git clone https://github.com/diana-moreno/few-seconds-math-game.git`
+
 - Type the following commands in your terminal:
 
 `  ~ npm install`  
