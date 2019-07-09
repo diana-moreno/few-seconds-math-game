@@ -1,6 +1,6 @@
 ## FEW SECONDS MATH GAME
 
-Ten Seconds Math is a game created by Michael Jakob to challenge a person's mathematical skills against the clock.  
+Ten Seconds Math is a game created by Michael Jakob to challenge a person's mathematical skills against the clock.
 In this project, I made my own version of this game changing some of it's features.
 
 #### **Features**
@@ -16,29 +16,29 @@ In this project, I made my own version of this game changing some of it's featur
 
 #### **Usage**
 
-To run the game in local, I have included Serve, a local server from an NPM library. 
+To run the game in local, I have included Serve, a local server from an NPM library.
 
 - Install Node.js at the terminal if you haven't yet. (global commands for Ubuntu)
 
-```
-   ~ sudo apt-get update
-   ~ sudo apt-get install nodejs
+```bash
+sudo apt-get update
+sudo apt-get install nodejs
 ```
 - You will need to install the package manager npm:
 
-```
-   ~ sudo apt-get install npm
+```bash
+sudo apt-get install npm
 ```
 - Clone or download the repository in your computer.
 
-```
-   ~ git clone https://github.com/diana-moreno/few-seconds-math-game.git`
+```bash
+git clone https://github.com/diana-moreno/few-seconds-math-game.git`
 ```
 - Type the following commands in your terminal:
 
-```
-   ~ npm install
-   ~ npm start
+```bash
+npm install
+npm start
 ```
 - Open the project trought the links are provided by the server.
 
