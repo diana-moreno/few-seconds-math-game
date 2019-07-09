@@ -26,17 +26,20 @@ To run the game in local, I have included Serve, a local server from an NPM libr
 ```
 - You will need to install the package manager npm:
 
-`  ~ sudo apt-get install npm`
-
+```
+   ~ sudo apt-get install npm
+```
 - Clone or download the repository in your computer.
 
-`  ~ git clone https://github.com/diana-moreno/few-seconds-math-game.git`
-
+```
+   ~ git clone https://github.com/diana-moreno/few-seconds-math-game.git`
+```
 - Type the following commands in your terminal:
 
-`  ~ npm install`  
-`  ~ npm start`
-
+```
+   ~ npm install
+   ~ npm start
+```
 - Open the project trought the links are provided by the server.
 
 ```
