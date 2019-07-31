@@ -41,7 +41,7 @@ git clone https://github.com/diana-moreno/few-seconds-math-game.git`
 - Download the npm competitions in your own repository and start it.
 
 ```bash
-npm install
+npm install serve
 npm start
 ```
 - Open the project trought the links are provided by the server.
