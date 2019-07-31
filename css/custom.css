@@ -4,7 +4,6 @@ body {
   background-size: cover;
   width: 100%;
   height: 100%;
-  ssspadding: 5vh 0px;
 }
 body::after {
   position: absolute;
